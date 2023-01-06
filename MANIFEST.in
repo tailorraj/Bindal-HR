@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include bindal_hr_customization *.css
+recursive-include bindal_hr_customization *.csv
+recursive-include bindal_hr_customization *.html
+recursive-include bindal_hr_customization *.ico
+recursive-include bindal_hr_customization *.js
+recursive-include bindal_hr_customization *.json
+recursive-include bindal_hr_customization *.md
+recursive-include bindal_hr_customization *.png
+recursive-include bindal_hr_customization *.py
+recursive-include bindal_hr_customization *.svg
+recursive-include bindal_hr_customization *.txt
+recursive-exclude bindal_hr_customization *.pyc
