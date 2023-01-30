@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-01-13 14:42:05.740300",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "extra_deduct",
+  "holiday_comp"
+ ],
+ "fields": [
+  {
+   "fieldname": "extra_deduct",
+   "fieldtype": "Link",
+   "label": "Extra Deduction Component",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "holiday_comp",
+   "fieldtype": "Link",
+   "label": "Performance Component",
+   "options": "Salary Component"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-01-24 12:35:57.459095",
+ "modified_by": "Administrator",
+ "module": "Bindal Hr Customization",
+ "name": "Bindal payroll Component Setup",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -94,7 +94,38 @@ app_license = "MIT"
 # Document Events
 # ---------------
 # Hook on document methods and events
+doc_events = {
+	# "Additional Salary":{
+	# 	"on_submit": "bindal_hr_customization.bindal_hr_customization.custom_doctype.additional_salary.additional_salary.on_submit"
+	# },
+	"Salary Structure Assignment":{
+		"validate": "bindal_hr_customization.bindal_hr_customization.custom_doctype.salary_structure_assignment.salary_structure_assignment.validate"
+	},
+	"Attendance":{
+		"validate":"bindal_hr_customization.bindal_hr_customization.custom_scripts.attendance.get_miss_check_in_or_out"
+	}
+	
+	
+}
 
+fixtures = ["Workflow State","Workflow Action Master",
+    {"dt": "Custom Field", "filters": [
+        [
+            "name", "in", ["Additional Salary-bindal_payroll_ref","Attendance Request-attendance_approver_email_id","Attendance Request-attendance_approver","Attendance-employee_email","Employee-bonus","Attendance-miss_in_out","Attendance-attendance_created_manually_","Employee-set_pf_custom","Employee-cash_employee_custom","Additional Salary-bindal_payroll_child_table_reference","Additional Salary-bindal_payroll_tool","Attendance-workflow_state"]
+        ]
+    ]},
+    # {"dt": "Property Setter", "filters": [
+    #     [
+    #         "name", "in", ["BOM Item-qty-read_only_depends_on","Work Order-skip_transfer-default","Purchase Receipt-provisional_expense_account-hidden","Work Order-use_multi_level_bom-default","Quality Inspection-readings-allow_bulk_edit"
+    #         ]
+    #     ]
+    # ]},
+	{"dt": "Workflow", "filters": [
+        [
+            "name", "in", ["Attendance Workflow"]
+        ]
+    ]},
+]
 # doc_events = {
 # 	"*": {
 # 		"on_update": "method",
