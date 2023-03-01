@@ -2,12 +2,81 @@
  {
   "docstatus": 0,
   "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-02-14 15:50:55.142733",
+  "name": "Technical Verification",
+  "style": "",
+  "workflow_state_name": "Technical Verification"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-02-14 15:51:22.984681",
+  "name": "Purchase Requested",
+  "style": "",
+  "workflow_state_name": "Purchase Requested"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-02-15 10:52:05.325474",
+  "name": "Under HOD Review",
+  "style": "",
+  "workflow_state_name": "Under HOD Review"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-02-15 15:18:20.786888",
+  "name": "Pending CTO Approval",
+  "style": "",
+  "workflow_state_name": "Pending CTO Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-02-15 15:25:06.351372",
+  "name": "Rejected By Purchase Manager",
+  "style": "",
+  "workflow_state_name": "Rejected By Purchase Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-02-15 16:26:45.805210",
+  "name": "Pending Approval",
+  "style": "",
+  "workflow_state_name": "Pending Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-02-15 18:49:27.627681",
+  "name": "Cancel",
+  "style": "",
+  "workflow_state_name": "Cancel"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-02-15 18:50:27.971182",
+  "name": "Cancelled",
+  "style": "",
+  "workflow_state_name": "Cancelled"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
   "icon": "question-sign",
   "modified": "2023-01-06 16:24:02.455375",
   "name": "Pending",
-  "parent": null,
-  "parentfield": null,
-  "parenttype": null,
   "style": "",
   "workflow_state_name": "Pending"
  },
@@ -17,9 +86,6 @@
   "icon": "ok-sign",
   "modified": "2023-01-06 16:24:02.459396",
   "name": "Approved",
-  "parent": null,
-  "parentfield": null,
-  "parenttype": null,
   "style": "Success",
   "workflow_state_name": "Approved"
  },
@@ -29,9 +95,6 @@
   "icon": "remove",
   "modified": "2023-01-06 16:24:02.463599",
   "name": "Rejected",
-  "parent": null,
-  "parentfield": null,
-  "parenttype": null,
   "style": "Danger",
   "workflow_state_name": "Rejected"
  },
@@ -41,9 +104,6 @@
   "icon": "",
   "modified": "2023-01-06 16:57:44.693598",
   "name": "Draft",
-  "parent": null,
-  "parentfield": null,
-  "parenttype": null,
   "style": "",
   "workflow_state_name": "Draft"
  },
@@ -53,9 +113,6 @@
   "icon": "",
   "modified": "2023-01-06 16:57:58.479773",
   "name": "Submit",
-  "parent": null,
-  "parentfield": null,
-  "parenttype": null,
   "style": "",
   "workflow_state_name": "Submit"
  },
@@ -65,9 +122,6 @@
   "icon": "",
   "modified": "2023-01-07 12:12:47.682584",
   "name": "Submitted",
-  "parent": null,
-  "parentfield": null,
-  "parenttype": null,
   "style": "",
   "workflow_state_name": "Submitted"
  }

@@ -271,7 +271,7 @@ def get_conditions(filters):
 def get_employee_details(group_by, company):
 	emp_map = {}
 	query = """select name, employee_name, designation, department, branch, company,
-		holiday_list from `tabEmployee` where cash_employee_custom = 0 and  company = %s""" % frappe.db.escape(company)
+		bindal_holiday_list as holiday_list from `tabEmployee` where cash_employee_custom = 0 and  company = %s""" % frappe.db.escape(company)
 
 	if group_by:
 		group_by = group_by.lower()
@@ -304,6 +304,9 @@ def get_holiday(holiday_list, month):
 	holiday_map = frappe._dict()
 	for d in holiday_list:
 		if d:
+			# holiday_map.setdefault(d, frappe.db.sql('''select day(holiday_date), weekly_off from `tabHoliday`
+			# 	where parent=%s and month(holiday_date)=%s''', (d, month)))
+			
 			holiday_map.setdefault(d, frappe.db.sql('''select day(holiday_date), weekly_off from `tabHoliday`
 				where parent=%s and month(holiday_date)=%s''', (d, month)))
 
