@@ -38,12 +38,12 @@ def execute(filters=None):
 
 		for e in earning_types:
 
-			row.append(round(ss_earning_map.get(ss.name, {}).get(e)))
+			row.append(ss_earning_map.get(ss.name, {}).get(e))
 
 		if currency == company_currency:
-			row += [round(flt(ss.gross_pay) * flt(ss.exchange_rate))]
+			row += [(flt(ss.gross_pay) * flt(ss.exchange_rate))]
 		else:
-			row += [round(int(ss.gross_pay))]
+			row += [(int(ss.gross_pay))]
 	# -------------------------Custom Logic for 3 component--------------------
 		bonus_provision = 0
 		leave_reimbursement_provision = 0
@@ -65,14 +65,14 @@ def execute(filters=None):
 		row.append(int(leave_reimbursement_provision))
 	# -------------------------Custom Logic for 3 component--------------------
 		for d in ded_types:
-			row.append(round(ss_ded_map.get(ss.name, {}).get(d)))
+			row.append((ss_ded_map.get(ss.name, {}).get(d)))
 
 		row.append(int(ss.total_loan_repayment))
 
 		if currency == company_currency:
-			row += [round(flt(ss.total_deduction) * flt(ss.exchange_rate)),round(flt(ss.net_pay) * flt(ss.exchange_rate))]
+			row += [(flt(ss.total_deduction) * flt(ss.exchange_rate)),(flt(ss.net_pay) * flt(ss.exchange_rate))]
 		else:
-			row += [round(ss.total_deduction), round(ss.net_pay)]
+			row += [(ss.total_deduction), (ss.net_pay)]
 		row.append(currency or company_currency)
 		data.append(row)
 	# -------------------------Custom Logic for 3 component-------------------- 

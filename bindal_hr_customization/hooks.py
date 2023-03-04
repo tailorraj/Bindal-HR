@@ -111,7 +111,7 @@ doc_events = {
 fixtures = ["Workflow State","Workflow Action Master",
     {"dt": "Custom Field", "filters": [
         [
-            "name", "in", ["Additional Salary-bindal_payroll_ref","Attendance Request-attendance_approver_email_id","Attendance Request-attendance_approver","Attendance-employee_email","Employee-bonus","Attendance-miss_in_out","Attendance-attendance_created_manually_","Employee-set_pf_custom","Employee-cash_employee_custom","Additional Salary-bindal_payroll_child_table_reference","Additional Salary-bindal_payroll_tool","Attendance-workflow_state"]
+            "name", "in", ["Employee-bindal_holiday_list","Additional Salary-bindal_payroll_ref","Attendance Request-attendance_approver_email_id","Attendance Request-attendance_approver","Attendance-employee_email","Employee-bonus","Attendance-miss_in_out","Attendance-attendance_created_manually_","Employee-set_pf_custom","Employee-cash_employee_custom","Additional Salary-bindal_payroll_child_table_reference","Additional Salary-bindal_payroll_tool","Attendance-workflow_state"]
         ]
     ]},
     # {"dt": "Property Setter", "filters": [
