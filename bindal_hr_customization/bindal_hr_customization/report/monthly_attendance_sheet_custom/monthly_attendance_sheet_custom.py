@@ -71,7 +71,7 @@ def execute(filters=None):
 			emp_map_set = set([key for key in emp_map[parameter].keys()])
 			att_map_set = set([key for key in att_map.keys()])
 			if (att_map_set & emp_map_set):
-				parameter_row = ["<b>"+ parameter + "</b>"] + ['' for day in range(filters["total_days_in_month"] + 2)]
+				parameter_row = [ parameter ] + ['' for day in range(filters["total_days_in_month"] + 2)]
 				data.append(parameter_row)
 				record, emp_att_data = add_data(emp_map[parameter], att_map, filters, holiday_map, conditions, default_holiday_list, leave_list=leave_list)
 				emp_att_map.update(emp_att_data)

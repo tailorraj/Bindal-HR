@@ -43,31 +43,31 @@ def execute(filters=None):
 		if currency == company_currency:
 			row += [(flt(ss.gross_pay) * flt(ss.exchange_rate))]
 		else:
-			row += [(int(ss.gross_pay))]
+			row += [(int(ss.gross_pay or 0))]
 	# -------------------------Custom Logic for 3 component--------------------
 		bonus_provision = 0
 		leave_reimbursement_provision = 0
-		Leave = int(ss.absent_days)
+		Leave = int(ss.absent_days or 0)
 
 		monthly_present,total_days,bonus_days,ssa_gross = get_leave_and_bonus(ss.employee, ss.start_date, ss.end_date,ss.absent_days)
 		bonus_rate = frappe.get_value('Employee',ss.employee,'bonus')
-		basic = int(ss_earning_map.get(ss.name, {}).get("Basic"))
+		basic = int(ss_earning_map.get(ss.name, {}).get("Basic") or 0)
 		bonus_provision = ((basic*(bonus_rate/100))*bonus_days/total_days)
 
 		leave_points = 0	
-		if int(monthly_present[0].present_count) > 18:
+		if int(monthly_present[0].present_count or 0) > 18:
 			leave_points = 1.33
 			leave_reimbursement_provision = (flt(ssa_gross) * 1.33) / 30
 			
-		row.append(int(bonus_provision))
-		row.append(int(Leave))
-		row.append(flt(leave_points))
-		row.append(int(leave_reimbursement_provision))
+		row.append(int(bonus_provision or 0))
+		row.append(int(Leave or 0))
+		row.append(flt(leave_points or 0))
+		row.append(int(leave_reimbursement_provision or 0))
 	# -------------------------Custom Logic for 3 component--------------------
 		for d in ded_types:
 			row.append((ss_ded_map.get(ss.name, {}).get(d)))
 
-		row.append(int(ss.total_loan_repayment))
+		row.append(int(ss.total_loan_repayment or 0))
 
 		if currency == company_currency:
 			row += [(flt(ss.total_deduction) * flt(ss.exchange_rate)),(flt(ss.net_pay) * flt(ss.exchange_rate))]
@@ -214,7 +214,7 @@ def get_leave_and_bonus(emp, start_date, end_date,absent_days):
 	monthly_present = get_monthly_present(emp,start_date,end_date)
 	
 	total_days = date_diff(end_date, start_date)+1
-	bonus_days = int(total_days-absent_days)
+	bonus_days = int((total_days-absent_days) or 0)
 	monthly_present = sorted(monthly_present, key=lambda k: datetime.strptime(k['month'], "%m-%Y"))
 
 	salaryDetails = get_salary_details(emp)
